@@ -34,7 +34,7 @@ public class SuperheroRepository{
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(SQL);
             while(rs.next()){
-                superheroes.add(new SuperheroModel(rs.getString("SUPERHERONAME"),rs.getString("REALNAME"),rs.getDate("CREATIONYEAR")));
+                superheroes.add(new SuperheroModel(rs.getString("SUPERHERONAME"),rs.getString("REALNAME"),rs.getInt("CREATIONYEAR")));
             }
             return superheroes;
         } catch (SQLException e) {

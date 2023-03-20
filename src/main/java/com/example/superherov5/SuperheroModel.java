@@ -8,15 +8,14 @@ public class SuperheroModel {
 
     private String name;
     private String realName;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private java.sql.Date introductionDate;
+    private int introductionDate;
     private String cityName;
     private List<String> superpowerList;
 
     public SuperheroModel(){
     }
 
-    public SuperheroModel(String name, String realName, java.sql.Date introductionDate) {
+    public SuperheroModel(String name, String realName, int introductionDate) {
         this.name = name;
         this.realName = realName;
         this.introductionDate = introductionDate;
@@ -29,8 +28,6 @@ public class SuperheroModel {
     public SuperheroModel(List<String> superpowerList) {
         this.superpowerList = superpowerList;
     }
-
-
 
     @Override
     public String toString() {
@@ -53,11 +50,11 @@ public class SuperheroModel {
         this.realName = realName;
     }
 
-    public java.sql.Date getIntroductionDate() {
+    public int getIntroductionDate() {
         return introductionDate;
     }
 
-    public void setIntroductionDate(java.sql.Date introductionDate) {
+    public void setIntroductionDate(int introductionDate) {
         this.introductionDate = introductionDate;
     }
 
