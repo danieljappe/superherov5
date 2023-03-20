@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Succes</title>
+    <style type="text/css">
+        span {
+            display: inline-block;
+            width: 200px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div align="center">
+    <h2>Registration Succeeded!</h2>
+    <span>Full name:</span><span th:text="${superheroModel.name}"></span><br/>
+    <span>E-mail:</span><span th:text="${superheroModel.realName}"></span><br/>
+    <span>Password:</span><span th:text="${superheroModel.introductionDate}"></span><br/>
+    <span>Gender:</span><span th:text="${superheroModel.cityName}"></span><br/>
+    <span>Profession:</span><span th:text="${superheroModel.superpowerList}"></span><br/>
+</div>
+</body>
+</html>

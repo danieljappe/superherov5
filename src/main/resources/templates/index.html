@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/main.css}">
+</head>
+<body>
+<h1>
+    Superheroes
+</h1>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Real Name</th>
+        <th scope="col">Creation date</th>
+        <th scope="col">Powers</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="superhero: ${superheroes}">
+        <td th:text="${superhero.name}"/>
+        <td th:text="${superhero.realName}"/>
+        <td th:text="${superhero.introductionDate}"/>
+        <td>
+            <a th:href="@{'/superpower/' + ${superhero.getName()}}">
+                <button type="submit">View</button>
+            </a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div style="padding: 10px">
+    <a th:href="@{'/createsuperhero'}">
+        <button type="submit">
+            Create superhero
+        </button>
+    </a>
+</div>
+
+
+</body>
+</html>
