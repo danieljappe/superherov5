@@ -15,6 +15,7 @@ import org.slf4j.LoggerFactory;
 
 
 import java.sql.Date;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -50,8 +51,8 @@ public class Controller {
     }
 
     @PostMapping("/createsuperhero")
-    public String submitSuperhero(@ModelAttribute("superheroModel") SuperheroModel superheroModel){
-        System.out.println(superheroModel);
+    public String submitSuperhero(@ModelAttribute("superheroModel") SuperheroModel superheroModel) throws SQLException {
+        superheroRepository.addSuperheroToDatabase(superheroModel);
         return "superhero_create_succesful";
     }
 
